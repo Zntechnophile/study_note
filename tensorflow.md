@@ -120,4 +120,4 @@ sess.run()方法将会运行图表中与作为参数传入的操作相对应的�
 
 for step in xrange(max_steps):
     sess.run(train_op)
-```
+```*mnist.py文件路径在tensorflow\examples\tutorials\mnist*
