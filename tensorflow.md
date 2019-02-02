@@ -18,13 +18,15 @@
 ## 构建图表
 **在为数据创建占位符之后，就可以运行mnist.py文件，经过三阶段的模式函数操作：inference()， loss()，和training()。图表就构建完成了。**
 
-### inference() (推理):函数会尽可能地构建图表，做到返回包含了预测结果（output prediction）的Tensor。它接受图像占位符为输入，在此基础上借助ReLu(Rectified Linear Units)激活函数，构建一对完全连接层（layers），以及一个有十个节点（node）、指明了输出logtis模型的线性层。每一层都创建于一个唯一的tf.name_scope之下，创建于该作用域之下的所有元素都将带有其前缀
+### inference() (推理):函数会尽可能地构建图表，做到返回包含了预测结果（output prediction）的Tensor。它接受图像占位符为输入，在此基础上借助ReLu(Rectified Linear Units)激活函数，构建一对完全连接层（layers），以及一个有十个节点（node）、指明了输出logtis模型的线性层。每一层都创建于一个唯一的**tf.name_scope**之下，创建于该作用域之下的所有元素都将带有其前缀
 
-tf.Variable实例:生成每一层所使用的权重和偏差，并且包含了各自期望的shape。
+**tf.Variable**实例:生成每一层所使用的权重和偏差，并且包含了各自期望的shape。
 例如，当这些层是在hidden1作用域下生成时，赋予权重变量的独特名称将会是"hidden1/weights
 每个变量在构建时，都会获得初始化操作（initializer ops）。
-tf.truncated_normal函数初始化权重变量，给赋予的shape则是一个二维tensor，其中第一个维度代表该层中权重变量所连接（connectfrom）的单元数量，第二个维度代表该层中权重变量所连接到的（connect to）单元数量。对于名叫hidden1的第一层，相应的维度则是[IMAGE_PIXELS, hidden1_units]，因为权重变量将图像输入连接到了hidden1层。
-tf.truncated_normal初始函数将根据所得到的均值和标准差，生成一个随机分布。
+
+**tf.truncated_normal**函数初始化权重变量，给赋予的shape则是一个二维tensor，其中第一个维度代表该层中权重变量所连接（connectfrom）的单元数量，第二个维度代表该层中权重变量所连接到的（connect to）单元数量。对于名叫hidden1的第一层，相应的维度则是[IMAGE_PIXELS, hidden1_units]，因为权重变量将图像输入连接到了hidden1层。
+
+**tf.truncated_normal**初始函数将根据所得到的均值和标准差，生成一个随机分布。
 tf.zeros函数初始化偏差变量（biases),确保所有偏差的起始值都是0，而它们的shape则是其在该层中所接到的（connect to）单元数量。
 
 ```
@@ -120,4 +122,6 @@ sess.run()方法将会运行图表中与作为参数传入的操作相对应的�
 
 for step in xrange(max_steps):
     sess.run(train_op)
-```*mnist.py文件路径在tensorflow\examples\tutorials\mnist*
+```
+*mnist.py文件路径在tensorflow\examples\tutorials\mnist*
+***该笔记的详细代码位于Code下***
