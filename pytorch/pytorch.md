@@ -26,7 +26,7 @@
 #### Variable:
 是Tensor的一个wrapper（封装），不仅保存了值，还保存了这个值的creator
 		torch.Tensor(2,3,4) 
-		# 创建一个未初始化的变量
+		# 创建一个未初始化的变量(一个三维包含两个二维,两个二维各包含3X4矩阵)
 		
 		torch.add(a,b,out=x) 
 		# 使用Tensor()方法创建出来的Tensor用来接收计算结果，当然torch.add(...)也会返回计算结果
