@@ -50,7 +50,6 @@ M - chr 表示当输入字符 chr 时,按住 Meta(Edit或Alt) 键
 C-u number C- chr  先输入C-u，再输入数字，最后输出命令，数字相当于重复执行C-chr的次数
                    
 有一些命令需要询问才可执行。Emacs会显示提示信息，
-
 ## 窗格(Window)
 
 ###  关掉多余的窗格
@@ -70,3 +69,25 @@ C-u number C- chr  先输入C-u，再输入数字，最后输出命令，数字�
     C-k                  移除从光标到"行尾"间的字符
 
     M-k                 移除从光标到"句尾"间的字符
+
+## 撤销
+    C-/    C-_   C -x u  消除一个命令的所造成的所有改变(可以多次撤销)
+### except
+    1.没有改变文字的命令不算(光标移动和滚动的命令)
+
+## 文件
+     屏幕下方：有"-:---TUTORIAL.cn"的文字，代表当前正在访问的文件 
+     C-x C-f  文件名                    寻找一个文件（下方会显示 Find file: 路径）
+     C-x C-s                           储存文件
+
+## 缓冲区(BUFFER)把每一个编辑中的文件都放在一个称为“缓冲区”。
+
+     C-x C-f                                   找到并打开第一个文件，要切回，再按命令
+     C-x C-b                                  列出缓冲区
+     C-x b  文件名                          回到此文件上
+     C- x s                                      保存多个缓冲区
+     *Buffer List*                            显示缓冲区的列表
+     *Messages*                            存放的是在Emacs底部的消息
+     C-h   m                                   查看当前模式的文档
+     ## 字符替换
+     M-x  repl s Return changed Return altered Return 
