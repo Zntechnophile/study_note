@@ -1,0 +1,1 @@
+super(MyFirstNetWork,self).__init__() super机制可以蒋公共的父类仅调用一次
